@@ -5,9 +5,9 @@ name: student-registry-CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "maste" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "maste" ]
 
 jobs:
   build:
