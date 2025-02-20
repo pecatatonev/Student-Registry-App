@@ -5,25 +5,28 @@ name: student-registry-CI
 
 on:
   push:
-    branches: [ "maste" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "maste" ]
+    branches: [ "master" ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Use Node.js 18.x
       uses: actions/setup-node@v4
       with:
         node-version: 18.x
         cache: 'npm'
-    - name: Install npm
-    - run: npm install
-    - name: Start npm
-    - run: npm start
-    - name: Test workflow
-    - run: npm test
+
+    - name: Install npm dependencies
+      run: npm install
+
+    - name: start build
+      run: npm run start
+
+    - name: Run tests
+      run: npm test
